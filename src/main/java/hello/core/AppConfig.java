@@ -12,23 +12,30 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService ->  new MemoryMemberRepository()
+    // 중복 생성 발생
+
     @Bean
     public MemberService memberService() {
-        return new MemberServiceImpl(getMemberRepository());
+        System.out.println("call AppConfig.memberService");
+        return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
-    public MemoryMemberRepository getMemberRepository() {
+    public MemoryMemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
-        return new OrderServiceImpl(getMemberRepository(), getDiscountPolicy());
+        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
-    public RateDiscountPolicy getDiscountPolicy() {
+    public RateDiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
 
