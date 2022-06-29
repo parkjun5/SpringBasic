@@ -5,13 +5,12 @@ import hello.core.MemberApp;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberServiceImpl;
 import hello.core.order.OrderServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ConfigurationSingletonTest {
+class ConfigurationSingletonTest {
 
     @Test
     void configurationTest() {
@@ -36,5 +35,6 @@ public class ConfigurationSingletonTest {
         MemberApp memberApp = new MemberApp();
         System.out.println("memberApp.getClass() = " + memberApp.getClass());
         System.out.println("appConfig.getClass() = " + appConfig.getClass());
+        assertThat(memberApp).isInstanceOf(MemberApp.class);
     }
 }

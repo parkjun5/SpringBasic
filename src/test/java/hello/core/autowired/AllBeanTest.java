@@ -4,7 +4,6 @@ import hello.core.AutoAppConfig;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Grade;
 import hello.core.member.Member;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +14,7 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class AllBeanTest {
+class AllBeanTest {
 
     @Test
     void findAllBean() {

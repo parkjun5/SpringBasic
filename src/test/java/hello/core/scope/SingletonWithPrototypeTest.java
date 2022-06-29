@@ -15,7 +15,7 @@ import javax.inject.Provider;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class SingletonWithPrototypeTest {
+class SingletonWithPrototypeTest {
 
     @Test
     void prototypeFind() {

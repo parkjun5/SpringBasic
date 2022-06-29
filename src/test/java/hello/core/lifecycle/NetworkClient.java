@@ -3,7 +3,7 @@ package hello.core.lifecycle;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class NetworkClient {
+class NetworkClient {
 
     private String url;
 

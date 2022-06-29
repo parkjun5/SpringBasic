@@ -11,7 +11,7 @@ import javax.annotation.PreDestroy;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SingletonTest {
+class SingletonTest {
 
     @Test
     void SingletonBeanFind() {
